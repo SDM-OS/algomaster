@@ -1,4 +1,19 @@
 from django.db import models
+from django_autoslug.fields import AutoSlugField
+
+class Resource(models.Model):
+	TYPE = (
+		('1', 'video'),
+		('2', 'tutorial'),
+		('3', 'code')
+	)
+	title = models.CharField(max_length=200)
+	link = models.URLField()
+	resource_type = models.IntegerField(choices=TYPE)
+
+	def __unicode__(self):
+		return self.title
+
 
 
 class Content(models.Model):
@@ -12,7 +27,9 @@ class Content(models.Model):
 	title  = models.CharField(max_length=200)
 	description = models.TextField()
 	tag = models.CharField(max_length=10)
-	algo_type = models.IntegerField(max_length=20, choices=TYPES)
+	algo_type = models.IntegerField(choices=TYPES)
+	resource = models.ManyToManyField(Resource)
 
 	def __unicode__(self):
 		return self.title
+
