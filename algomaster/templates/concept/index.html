@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+ 
+
+{% block content %}
+
+ 
+ {% if request.user.is_authenticated %}
+<div class="jumbotron">
+   
+  <center><p><a class="btn btn-primary btn-lg">Browse Topics</a></p></center>
+</div>
+
+ </div>
+{% else %}
+<div class="jumbotron">
+  <center><h1>Ignus</h1></center>
+  <center><b><p>Powering Education.</p></b></center>
+  <center><p><a href="/dashboard/" class="btn btn-primary btn-lg">Get Started Now</a></p></center>
+</div>
+ <center><h1>Features</h1></center>
+  <center>
+  <div class="row">
+                
+       <div class="col-sm-4">
+        <i class="fa fa-file-video-o fa-5x"></i>
+        <b><p>Structured Video Content</p></b> 
+       	
+       </div>
+              <div class="col-sm-4">
+        <i class="fa fa-bar-chart-o fa-5x"></i>
+        <b><p>Visualize your performance</p> </b>
+       	
+       </div>
+              <div class="col-sm-4">
+        <i class="fa fa fa-bookmark fa-5x"></i>
+        <b><p>Quiz on Each Topic</p></b> 
+       	
+       </div>
+  	
+  </div>
+          </center>
+
+{% endif %}
+
+{% endblock %}

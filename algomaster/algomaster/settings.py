@@ -38,7 +38,6 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'content',
     'rest_framework',
-    'social_auth',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -94,21 +93,6 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
 
-AUTHENTICATION_BACKENDS = (
-    'social_auth.backends.facebook.FacebookBackend',
+TEMPLATE_DIRS = (
+    'templates',
 )
-
-FACEBOOK_APP_ID              = '229808523857196'
-FACEBOOK_API_SECRET          = '7d46b88732879976cf07ee754642f4dc'
-
-LOGIN_REDIRECT_URL = '/profile/'
-
-TEMPLATE_CONTEXT_PROCESSORS = (
-    'django.contrib.auth.context_processors.auth',
-    'social_auth.context_processors.social_auth_by_name_backends',
-    'social_auth.context_processors.social_auth_backends',
-    'social_auth.context_processors.social_auth_by_type_backends',
-    'social_auth.context_processors.social_auth_login_redirect',
-)
-
-SESSION_SERIALIZER='django.contrib.sessions.serializers.PickleSerializer'

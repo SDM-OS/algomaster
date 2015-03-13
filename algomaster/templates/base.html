@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="http://bootswatch.com/lumen/bootstrap.min.css" rel="stylesheet">
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+	<title>Ignus | Powering Education</title>
+  <!-- video player part -->
+  <link href="http://vjs.zencdn.net/4.7/video-js.css" rel="stylesheet">
+<script src="http://vjs.zencdn.net/4.7/video.js"></script>
+<style type="text/css">
+  .vjs-default-skin { color: #d98d8d; }
+  .vjs-default-skin .vjs-control-bar { font-size: 100% }
+</style>
+<!--  video player assets -->
+</head>
+<body>
+
+        <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="/" class="navbar-brand"><i class="icon-map-marker"> </i>Ignus</a>
+          
+        </div>
+        <div class="navbar-collapse collapse" id="navbar-main">
+                
+
+
+
+    
+           
+           <ul class="nav navbar-nav navbar-right">
+           {% if not user.is_authenticated %} 
+          
+          <li><a href="/accounts/login/?next=/dashboard/">login</a></li>{% elif user.is_authenticated %}
+          <li><a href="/dashboard/">Dashboard</a></li>
+          <li><a href="/browse/">Browse</a></li>
+          <li><a href="/q/">Take Quiz</a></li>         
+          <li><a href="/accounts/logout/?next=///">Logout</a></li>
+           {% endif %}              
+          </ul>
+           </div>
+      </div>
+    </div>
+    <br/>
+
+	 {% block content %}
+      {% endblock %}      
+ 
+
+  <script src="//code.jquery.com/jquery.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.min.js"></script>
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc1/js/bootstrap.min.js"></script> 
+</body>
+</html>
+
+<body>
