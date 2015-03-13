@@ -7,12 +7,12 @@ class Content(models.Model):
         (2, 'Search'),
         (3, 'Data Structure'),
         (4, 'Heaps'),
-        (5, 'Graphs')
+        (5, 'Graphs'),
     )
 	title  = models.CharField(max_length=200)
 	description = models.TextField()
 	tag = models.CharField(max_length=10)
-	algo_type = models.CharField(max_length=20, choices=TYPES)
+	algo_type = models.IntegerField(max_length=20, choices=TYPES)
 
 	def __unicode__(self):
 		return self.title
