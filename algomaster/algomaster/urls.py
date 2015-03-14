@@ -8,4 +8,5 @@ urlpatterns = patterns('',
 
     url(r'^$', views.landing,),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^algorithms/', include('content.urls')),
 )

@@ -2,9 +2,9 @@ from django.db import models
 
 class Resource(models.Model):
 	TYPE = (
-		('1', 'video'),
-		('2', 'tutorial'),
-		('3', 'code')
+		(1, 'video'),
+		(2, 'tutorial'),
+		(3, 'code')
 	)
 	title = models.CharField(max_length=200)
 	link = models.URLField()
@@ -27,8 +27,10 @@ class Content(models.Model):
 	description = models.TextField()
 	tag = models.CharField(max_length=10)
 	algo_type = models.IntegerField(choices=TYPES)
-	resource = models.ManyToManyField(Resource)
+	resource = models.ManyToManyField(Resource, null=True)
 
 	def __unicode__(self):
 		return self.title
+
+
 

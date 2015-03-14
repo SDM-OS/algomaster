@@ -7,20 +7,10 @@
 <hr/>
 <center>
 <div class="row">
-<div class="col-sm-3">
-	                <p class="lead">Topics</p>
-                <div class="list-group">
-                    <a href="#" class="list-group-item">Maths</a>
-                    <a href="#" class="list-group-item">Phsyics</a>
-                    <a href="#" class="list-group-item">Chemistry</a>
-                </div>
 
-</div>
-<div class="col-sm-9">
-
-{% for concept in concepts %}
+{% for content in contents %}
  <br/>
-<b><li> <a href="/{{ concept.slug }}/">{{ concept.title }}</a> </li></b>
+<b><li> <a href="/{{ content.slug }}/">{{ content.title }}</a> </li></b>
 </div>
 </div>
 </center>
