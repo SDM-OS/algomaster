@@ -1,0 +1,89 @@
+
+{% extends "base.html" %}
+
+
+{% block content %}
+
+
+<hr/>
+
+ <center><p> <h1> {{ object.title }} </h1> <br/></center>
+
+ <script type="text/javascript">
+$(document).ready(function(){ 
+    $("#myTab li:eq(1) a").tab('show');
+});
+</script>
+<style type="text/css">
+    .bs-example{
+        margin: 20px;
+    }
+</style>
+<div class="col-sm-12">
+<div class="col-sm-6">
+    <video id="MY_VIDEO_1" class="video-js vjs-default-skin" controls
+ preload="auto" width="400" height="264" poster="MY_VIDEO_POSTER.jpg"
+ data-setup="{}">
+ <source src="{{ object.video_url}}" type='video/mp4'>
+ <source src="{{ object.video_url}}" type='video/webm'>
+ <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+</video>
+
+
+	<!-- <p>{{ object.video_url}}</p> -->
+</div>
+<div class="col-sm-6">
+<div class="bs-example">
+    <ul class="nav nav-tabs" id="myTab">
+        <li><a data-toggle="tab" href="#sectionA">Description</a></li>
+        <li><a data-toggle="tab" href="#sectionB">Notes</a></li>
+        <li><a data-toggle="tab" href="#sectionc">Example</a></li   
+    </ul>
+    <div class="tab-content">
+        <div id="sectionA" class="tab-pane fade in active">
+            <br/>
+            <br/>
+            <br/>
+            <p> {{ object.description }}</p>
+        </div>
+        <div id="sectionB" class="tab-pane fade">
+            <br/>
+            <br/>
+            <br/>
+            <p>{{ object.notes }}</p>
+        </div>
+                <div id="sectionc" class="tab-pane fade">
+             <br/>
+             <br/>
+             <br/>
+            <p>{{ object.example }}</p>
+            <input id="input" class="form-control" value="Your soloution"> <br/>
+             <a href="#" id="check" class="btn btn-success">Check</a>
+ 
+        </div>
+        
+    </div>
+</div>
+ </div>
+ </div>
+</p>
+<script type="text/javascript">
+    $(document).ready(function() {
+   
+    
+     $("#check").click(function(){
+       if($("#input").val()==1){
+        alert('awesome!');
+       } 
+
+     
+    });
+   
+
+    
+
+
+}); 
+</script>
+
+{% endblock %}

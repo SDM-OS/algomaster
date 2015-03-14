@@ -1,5 +1,4 @@
 from django.db import models
-from django_autoslug.fields import AutoSlugField
 
 class Resource(models.Model):
 	TYPE = (

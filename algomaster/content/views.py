@@ -4,4 +4,4 @@ from django.shortcuts import render
 
 def landing(request):
     context = {}
-    return render(request, 'concept/index.html', context)
+    return render(request, 'content/index.html', context)
